@@ -1,0 +1,2 @@
+from .awssessionhandler import AwsSessionHandler
+del awssessionhandler
