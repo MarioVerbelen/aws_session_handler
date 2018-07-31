@@ -126,7 +126,9 @@ class AwsSessionHandler:
                 long_expire = datetime.strptime(''.join(self._long_session_token['expire'].rsplit(':', 1)),
                                                 '%Y-%m-%dT%H:%M:%S%z')
                 if long_expire <= now:
+                    token_changed = True
                     self._long_session_token = None
+                    self._short_session_token = None
                 elif self._long_session_token['source_profile'] != self._config['source_profile']:
                     # we need to get a new long_token because source_profile switch
                     # the short token is no longer valid
