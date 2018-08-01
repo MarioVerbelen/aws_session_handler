@@ -1,6 +1,14 @@
 Release History
 ---------------
+0.0.3 (2018-08-01)
+++++++++++++++++++
+
+**Bugfix**
+
+- region and profile switching bug
+
 0.0.2 (2018-07-31)
+++++++++++++++++++
 
 **Bugfix**
 

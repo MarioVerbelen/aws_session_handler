@@ -92,9 +92,6 @@ class AwsSessionHandler:
         if not self._profile and not self._region:
             raise Exception('ERROR: missing region and profile (use self.set(profile_name=None, region=None)')
 
-        if self._session:
-            return self._session.client(*args, **kwargs)
-
         self._get_session()
         return self._session.client(*args, **kwargs)
 
