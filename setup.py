@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '0.0.3'
+VERSION = '0.0.4'
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
@@ -10,6 +10,7 @@ setup(
     packages=find_packages(),
     version=VERSION,
     description='AWS Session Handler',
+    long_description_content_type='text/markdown',
     long_description=long_description,
     keywords='boto3 amazon web services aws authentication',
     author='MarioVerbelen',
