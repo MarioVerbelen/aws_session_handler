@@ -95,6 +95,20 @@ class AwsSessionHandler:
         self._get_session()
         return self._session.client(*args, **kwargs)
 
+    def resource(self, *args, **kwargs):
+        """
+        Lookup credentials and give a boto3 resource in return
+        (check boto3 client for args, kwargs)
+        :param args:
+        :param kwargs:
+        :return: boto3 session client
+        """
+        if not self._profile and not self._region:
+            raise Exception('ERROR: missing region and profile (use self.set(profile_name=None, region=None)')
+
+        self._get_session()
+        return self._session.resource(*args, **kwargs)
+
     def get_session(self):
         self._get_session()
         return self._session
